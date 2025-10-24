@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .about-section {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 5rem 2rem;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-content {
+            padding: 2rem 0;
+        }
+
+        .about-label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-label::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background-color: #999;
+        }
+
+        .about-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: #2d2d2d;
+        }
+
+        .about-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-description:last-of-type {
+            margin-bottom: 2.5rem;
+        }
+
+        .about-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: transparent;
+            color: #d4a574;
+            text-decoration: none;
+            border: 2px solid #d4a574;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .about-btn:hover {
+            background-color: #d4a574;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+        }
+
+        /* Tablet Styles */
+        @media screen and (max-width: 1024px) {
+            .about-section {
+                padding: 4rem 2rem;
+            }
+
+            .about-container {
+                gap: 3rem;
+            }
+
+            .about-title {
+                font-size: 2.4rem;
+            }
+
+            .about-image {
+                height: 500px;
+            }
+
+            .about-description {
+                font-size: 1rem;
+            }
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .about-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-image {
+                height: 400px;
+                order: 1;
+            }
+
+            .about-content {
+                padding: 0;
+                order: 2;
+            }
+
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .about-description {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+
+            .about-label {
+                font-size: 0.85rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media screen and (max-width: 480px) {
+            .about-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .about-container {
+                gap: 2rem;
+            }
+
+            .about-title {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .about-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .about-description:last-of-type {
+                margin-bottom: 2rem;
+            }
+
+            .about-btn {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .about-label::before {
+                width: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop" 
+                     alt="3D Rendering workspace with professional design tools">
+            </div>
+
+            <div class="about-content">
+                <div class="about-label">About Us</div>
+                <h2 class="about-title">Creating Inspiring 3D Spaces Discover Premier 3D Rendering Experts</h2>
+                <p class="about-description">
+                    At our 3d Rendering company, we are passionate about creating renderings that inspire and enhance your lifestyle. With a team of skilled designers and professionals, we are strive to provide exceptional services that exceed your expectations.
+                </p>
+                <p class="about-description">
+                    We believe that a well-designed space can have a profound impact on your well-being and quality of life. Whether it's your home, office, or any other interior environment is we understand the importance of creating a space that reflects your personality with meets your functional needs, and brings you joy.
+                </p>
+                <a href="#read-more" class="about-btn">Read More</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

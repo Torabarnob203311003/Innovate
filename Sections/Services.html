@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .services-section {
+            width: 100%;
+            padding: 5rem 2rem;
+            background-color: #f5f5f5;
+        }
+
+        .services-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .services-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .services-subtitle {
+            font-size: 1.1rem;
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .service-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            color: #718096;
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: #6b9bd1;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Tablet Styles */
+        @media screen and (max-width: 1024px) {
+            .services-section {
+                padding: 4rem 2rem;
+            }
+
+            .services-title {
+                font-size: 2.5rem;
+            }
+
+            .services-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2.5rem 1.75rem;
+            }
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .services-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .services-header {
+                margin-bottom: 3rem;
+            }
+
+            .services-title {
+                font-size: 2rem;
+            }
+
+            .services-subtitle {
+                font-size: 1rem;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-card-title {
+                font-size: 1.3rem;
+            }
+
+            .service-description {
+                font-size: 0.95rem;
+            }
+
+            .service-features li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media screen and (max-width: 480px) {
+            .services-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .services-title {
+                font-size: 1.75rem;
+            }
+
+            .services-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .service-card {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .service-card-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .service-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-features li {
+                font-size: 0.85rem;
+                padding: 0.6rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="services-section">
+        <div class="services-header">
+            <h2 class="services-title">Our Services</h2>
+            <p class="services-subtitle">Comprehensive 3D visualization solutions for all your needs</p>
+        </div>
+
+        <div class="services-container">
+            <!-- Architectural Visualization Card -->
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3 class="service-card-title">Architectural Visualization</h3>
+                <p class="service-description">
+                    Stunning exterior and interior renderings that bring your architectural designs to life with photorealistic detail.
+                </p>
+                <ul class="service-features">
+                    <li>Exterior Renderings</li>
+                    <li>Interior Design</li>
+                    <li>Landscape Visualization</li>
+                    <li>Aerial Views</li>
+                </ul>
+            </div>
+
+            <!-- Product Visualization Card -->
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3 class="service-card-title">Product Visualization</h3>
+                <p class="service-description">
+                    High-quality 3D product renders for marketing, e-commerce, and promotional materials.
+                </p>
+                <ul class="service-features">
+                    <li>Product Modeling</li>
+                    <li>Material Rendering</li>
+                    <li>360° Views</li>
+                    <li>Animation</li>
+                </ul>
+            </div>
+
+            <!-- 3D Animation Card -->
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3 class="service-card-title">3D Animation</h3>
+                <p class="service-description">
+                    Dynamic walkthroughs and animations that showcase your projects in motion.
+                </p>
+                <ul class="service-features">
+                    <li>Architectural Walkthroughs</li>
+                    <li>Flythrough Animations</li>
+                    <li>Product Animations</li>
+                    <li>Virtual Tours</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

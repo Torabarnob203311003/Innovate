@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .contact-section {
+            width: 100%;
+            padding: 5rem 2rem;
+            background-color: #fafafa;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #c4a574;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-label::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background-color: #c4a574;
+        }
+
+        .contact-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d2d2d;
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1.2rem 0;
+            font-size: 1rem;
+            color: #2d2d2d;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #d0d0d0;
+            outline: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #999;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-bottom-color: #c4a574;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            padding-top: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #999;
+            background-color: transparent;
+            border: 2px solid #d0d0d0;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .submit-btn:hover {
+            background-color: #c4a574;
+            border-color: #c4a574;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(196, 165, 116, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Tablet Styles */
+        @media screen and (max-width: 1024px) {
+            .contact-section {
+                padding: 4rem 2rem;
+            }
+
+            .contact-title {
+                font-size: 2.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.75rem;
+            }
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .contact-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .contact-label {
+                font-size: 0.85rem;
+                margin-bottom: 1.25rem;
+            }
+
+            .contact-label::before {
+                width: 30px;
+            }
+
+            .form-input,
+            .form-textarea {
+                padding: 1rem 0;
+                font-size: 0.95rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .submit-btn {
+                padding: 1.1rem 2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media screen and (max-width: 480px) {
+            .contact-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .contact-title {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-label {
+                font-size: 0.8rem;
+            }
+
+            .contact-label::before {
+                width: 25px;
+            }
+
+            .form-input,
+            .form-textarea {
+                padding: 0.9rem 0;
+                font-size: 0.9rem;
+            }
+
+            .form-textarea {
+                min-height: 100px;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            .submit-btn {
+                padding: 1rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media screen and (max-width: 360px) {
+            .contact-section {
+                padding: 2rem 0.75rem;
+            }
+
+            .contact-title {
+                font-size: 1.5rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-label">Get In Touch</div>
+            <h2 class="contact-title">Contact Me</h2>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Your Name"
+                        name="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="tel" 
+                        class="form-input" 
+                        placeholder="Your Number"
+                        name="phone"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        class="form-input" 
+                        placeholder="Service Type"
+                        name="service"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <textarea 
+                        class="form-textarea" 
+                        placeholder="Write Message"
+                        name="message"
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Now</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(e.target);
+            
+            // Show success message
+            alert('Message sent successfully! We will get back to you soon.');
+            
+            // Reset form
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
