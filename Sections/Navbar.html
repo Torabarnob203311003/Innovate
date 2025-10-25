@@ -5,20 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Navbar</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
         nav {
             background-color: #ffffff;
             padding: 1rem 3rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -58,24 +51,27 @@
             padding: 0;
         }
 
-        .nav-menu li {
+        .nav-menu li { list-style: none; margin: 0; }
+
+        .nav-menu li h3 {
             margin: 0;
+            font-size: 1.25rem; /* increased from 1rem */
+            font-weight: 600;
         }
 
         .nav-menu li a {
             text-decoration: none;
             color: #333;
-            font-size: 1rem;
-            font-weight: 500;
+            font-size: 1.3rem; /* slightly bigger link text */
+            font-weight: 600;
             transition: color 0.3s ease;
             position: relative;
             display: inline-block;
             padding: 0.5rem 0;
         }
 
-        .nav-menu li a:hover {
-            color: #d4a574;
-        }
+        /* keep hover color black */
+        .nav-menu li a:hover { color: #000; } /* hover color black */
 
         .nav-menu li a::after {
             content: '';
@@ -88,9 +84,7 @@
             transition: width 0.3s ease;
         }
 
-        .nav-menu li a:hover::after {
-            width: 100%;
-        }
+        .nav-menu li a:hover::after { width: 100%; }
 
         .hamburger {
             display: none;
@@ -110,29 +104,16 @@
             border-radius: 2px;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
-        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
 
         /* Tablet and Mobile Styles */
         @media screen and (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-            }
+            nav { padding: 1rem 1.5rem; }
+            .hamburger { display: flex; z-index: 1001; }
 
-            .hamburger {
-                display: flex;
-                z-index: 1001;
-            }
-
+            /* make the whole ul act as the sliding panel */
             .nav-menu {
                 position: fixed;
                 left: -100%;
@@ -142,16 +123,14 @@
                 width: 100%;
                 text-align: center;
                 transition: left 0.3s ease;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 27px rgba(0,0,0,0.1);
                 padding: 2rem 0;
                 gap: 0;
                 height: calc(100vh - 70px);
                 overflow-y: auto;
             }
 
-            .nav-menu.active {
-                left: 0;
-            }
+            .nav-menu.active { left: 0; }
 
             .nav-menu li {
                 width: 100%;
@@ -159,46 +138,28 @@
                 border-bottom: 1px solid #f0f0f0;
             }
 
-            .nav-menu li:last-child {
-                border-bottom: none;
-            }
+            .nav-menu li:last-child { border-bottom: none; }
 
             .nav-menu li a {
-                font-size: 1.1rem;
+                font-size: 2.4rem; /* increased from 1.7rem */
                 width: 100%;
                 display: block;
+                padding: 0.5rem 0;
             }
 
-            .nav-menu li a::after {
-                display: none;
-            }
+            .nav-menu li a::after { display: none; }
         }
 
         /* Small Mobile Styles */
         @media screen and (max-width: 480px) {
-            nav {
-                padding: 1rem;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .logo-icon {
-                width: 25px;
-                height: 25px;
-            }
-
-            .nav-menu {
-                top: 60px;
-                height: calc(100vh - 60px);
-            }
+            nav { padding: 1rem; }
+            .logo { font-size: 1.2rem; }
+            .logo-icon { width: 25px; height: 25px; }
+            .nav-menu { top: 60px; height: calc(100vh - 60px); }
         }
 
         /* Prevent body scroll when menu is open */
-        body.menu-open {
-            overflow: hidden;
-        }
+        body.menu-open { overflow: hidden; }
     </style>
 </head>
 <body>
@@ -208,13 +169,13 @@
                 <div class="logo-icon"></div>
                 <span>DEMO</span>
             </div>
-            
+
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#service">Service</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><h3><a href="#home">Home</a></h3></li>
+                <li><h3><a href="#about">About</a></h3></li>
+                <li><h3><a href="#service">Service</a></h3></li>
+                <li><h3><a href="#portfolio">Our WorkProcess</a></h3></li>
+                <li><h3><a href="#contact">Contact</a></h3></li>
             </ul>
 
             <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
@@ -242,10 +203,8 @@
             body.classList.remove('menu-open');
         }
 
-        // Toggle menu on hamburger click
         hamburger.addEventListener('click', toggleMenu);
 
-        // Support keyboard navigation
         hamburger.addEventListener('keypress', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -253,33 +212,26 @@
             }
         });
 
-        // Close menu when clicking on a link
+        // update selector still works: .nav-menu li a
         document.querySelectorAll('.nav-menu li a').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 closeMenu();
             }
         });
 
-        // Close menu on escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeMenu();
-            }
+            if (e.key === 'Escape') closeMenu();
         });
 
-        // Handle window resize
         let resizeTimer;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
-                if (window.innerWidth > 768) {
-                    closeMenu();
-                }
+                if (window.innerWidth > 768) closeMenu();
             }, 250);
         });
     </script>

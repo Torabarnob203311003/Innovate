@@ -4,243 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Section</title>
-  <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .hero-section {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
-    }
-
-    .hero-container {
-        display: grid;
-        grid-template-columns: 400px 1fr;
-        width: 100%;
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 2rem;
-        gap: 2rem;
-        align-items: center;
-    }
-
-    .hero-content {
-        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-        padding: 3rem 2.5rem;
-        border-radius: 8px;
-        color: white;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        position: relative;
-        z-index: 10;
-    }
-
-    .hero-label {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
-        color: #bdc3c7;
-        font-weight: 500;
-    }
-
-    .hero-label::before {
-        content: '';
-        width: 40px;
-        height: 2px;
-        background-color: #d4a574;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        color: #ffffff;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #ecf0f1;
-        margin-bottom: 2rem;
-    }
-
-    .hero-btn {
-        display: inline-block;
-        padding: 0.9rem 2rem;
-        background-color: transparent;
-        color: white;
-        text-decoration: none;
-        border: 2px solid white;
-        border-radius: 4px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-
-    .hero-btn:hover {
-        background-color: #d4a574;
-        border-color: #d4a574;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
-    }
-
-    .hero-image {
-        position: relative;
-        width: 100%;
-        height: 600px;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    }
-
-    .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    /* Decorative elements */
-    .decorator {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
-        pointer-events: none;
-    }
-
-    .decorator-1 {
-        top: -150px;
-        right: -150px;
-    }
-
-    .decorator-2 {
-        bottom: -150px;
-        left: -150px;
-    }
-
-    /* Tablet Styles */
-    @media screen and (max-width: 1024px) {
-        .hero-container {
-            grid-template-columns: 350px 1fr;
-            gap: 1.5rem;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .hero-content {
-            padding: 2.5rem 2rem;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .hero-title {
-            font-size: 2.2rem;
-        }
-
-        .hero-image {
-            height: 500px;
-        }
-    }
-
-    /* Mobile Styles */
-    @media screen and (max-width: 768px) {
         .hero-section {
-            min-height: auto;
-            padding: 2rem 0;
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background-color: #e8e8e8;
         }
 
         .hero-container {
-            grid-template-columns: 1fr;
-            padding: 1rem;
-            gap: 2rem;
-        }
-
-        .hero-content {
-            padding: 2rem 1.5rem;
-            order: 2;
-        }
-
-        .hero-title {
-            font-size: 1.8rem;
-        }
-
-        .hero-description {
-            font-size: 0.95rem;
+            position: relative;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
         }
 
         .hero-image {
-            height: 400px;
-            order: 1;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 92%;
+            height: 85vh;
+            max-height: 700px;
+            border-radius: 0;
+            overflow: hidden;
         }
 
-        .decorator {
-            width: 200px;
-            height: 200px;
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
-    }
 
-    /* Small Mobile Styles */
-    @media screen and (max-width: 480px) {
         .hero-content {
-            padding: 1.5rem 1.25rem;
-        }
-
-        .hero-title {
-            font-size: 1.5rem;
-        }
-
-        .hero-description {
-            font-size: 0.9rem;
+            position: relative;
+            z-index: 10;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            color: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            margin-left: 3rem;
+             transform: translatex(-40%);
         }
 
         .hero-label {
-            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+            font-weight: 500;
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background-color: #d4a574;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ecf0f1;
+            margin-bottom: 2rem;
         }
 
         .hero-btn {
-            padding: 0.8rem 1.5rem;
-            font-size: 0.9rem;
-            width: 100%;
-            text-align: center;
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .hero-image {
-            height: 300px;
+        .hero-btn:hover {
+            background-color: #d4a574;
+            border-color: #d4a574;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
         }
-    }
-</style>
 
-<section class="hero-section">
-    <div class="decorator decorator-1"></div>
-    <div class="decorator decorator-2"></div>
-    
-    <div class="hero-container">
-        <div class="hero-content">
-            <div class="hero-label">3D Renderings</div>
-            <h1 class="hero-title">Discover Inspired 3D Designs</h1>
-            <p class="hero-description">
-                We believe that a well-designed space can have a profound impact on quality of life.
-            </p>
-            <a href="#details" class="hero-btn">View Details</a>
+        /* Tablet Styles */
+        @media screen and (max-width: 1024px) {
+            .hero-image {
+                width: 95%;
+                height: 75vh;
+            }
+
+            .hero-content {
+                max-width: 350px;
+                padding: 2.5rem 2rem;
+                margin-left: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .hero-section {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                position: relative;
+                width: 100%;
+                height: 400px;
+                top: 0;
+                transform: none;
+                order: 1;
+                border-radius: 8px;
+            }
+
+            .hero-content {
+                position: relative;
+                max-width: 100%;
+                padding: 2rem 1.5rem;
+                margin-left: 0;
+                order: 2;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media screen and (max-width: 480px) {
+            .hero-content {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+            }
+
+            .hero-label {
+                font-size: 0.85rem;
+            }
+
+            .hero-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-label">3D Renderings</div>
+                <h1 class="hero-title">Discover Inspired 3D Designs</h1>
+                <p class="hero-description">
+                    We believe that a well-designed space can have a profound impact on quality of life.
+                </p>
+                <a href="#details" class="hero-btn">View Details</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&h=800&fit=crop" 
+                     alt="Modern interior design with elegant lighting and furniture">
+            </div>
         </div>
-
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&h=800&fit=crop" 
-                 alt="Modern interior design with elegant lighting and furniture">
-        </div>
-    </div>
-</section>
-
-
-
+    </section>
 </body>
 </html>
