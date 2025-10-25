@@ -19,42 +19,140 @@
         .services-section {
             width: 100%;
             padding: 5rem 2rem;
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
         }
 
-        .services-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
+        .services-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* Left Column - FAQ */
+        .services-left {
+            padding-right: 2rem;
+        }
+
+        .services-label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: #c4a574;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .services-label::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background-color: #c4a574;
         }
 
         .services-title {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 1rem;
+            color: #2d2d2d;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .services-subtitle {
-            font-size: 1.1rem;
-            color: #718096;
+        .services-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Accordion/FAQ */
+        .faq-container {
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #2d2d2d;
+            user-select: none;
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            color: #666;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #666;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        .services-container {
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-top: 1rem;
+        }
+
+        .view-details-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: transparent;
+            color: #999;
+            text-decoration: none;
+            border: 2px solid #d0d0d0;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .view-details-btn:hover {
+            background-color: #c4a574;
+            border-color: #c4a574;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(196, 165, 116, 0.3);
+        }
+
+        /* Right Column - Service Cards */
+        .services-right {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .service-card {
             background-color: #ffffff;
-            border-radius: 12px;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .service-card:hover {
@@ -63,51 +161,41 @@
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
 
         .service-card-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 1.5rem;
-            text-align: center;
+            color: #2d2d2d;
+            margin-bottom: 1rem;
         }
 
-        .service-description {
-            font-size: 1rem;
-            color: #718096;
-            line-height: 1.7;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .service-features {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 0;
+        .service-card-description {
             font-size: 0.95rem;
-            color: #4a5568;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
-        .service-features li::before {
-            content: '✓';
-            color: #6b9bd1;
-            font-weight: bold;
-            font-size: 1.2rem;
-            flex-shrink: 0;
+        .read-more-link {
+            font-size: 0.95rem;
+            color: #999;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .read-more-link:hover {
+            color: #c4a574;
+        }
+
+        .read-more-link::after {
+            content: '→';
         }
 
         /* Tablet Styles */
@@ -116,17 +204,20 @@
                 padding: 4rem 2rem;
             }
 
-            .services-title {
-                font-size: 2.5rem;
+            .services-wrapper {
+                gap: 3rem;
             }
 
-            .services-container {
-                grid-template-columns: repeat(2, 1fr);
+            .services-title {
+                font-size: 2.2rem;
+            }
+
+            .services-right {
                 gap: 1.5rem;
             }
 
             .service-card {
-                padding: 2.5rem 1.75rem;
+                padding: 2rem 1.5rem;
             }
         }
 
@@ -136,44 +227,31 @@
                 padding: 3rem 1.5rem;
             }
 
-            .services-header {
-                margin-bottom: 3rem;
+            .services-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-left {
+                padding-right: 0;
             }
 
             .services-title {
                 font-size: 2rem;
             }
 
-            .services-subtitle {
-                font-size: 1rem;
-            }
-
-            .services-container {
+            .services-right {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
 
-            .service-card {
-                padding: 2rem 1.5rem;
+            .faq-question {
+                font-size: 1rem;
             }
 
-            .service-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 2.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .service-card-title {
-                font-size: 1.3rem;
-            }
-
-            .service-description {
-                font-size: 0.95rem;
-            }
-
-            .service-features li {
-                font-size: 0.9rem;
+            .view-details-btn {
+                width: 100%;
+                text-align: center;
             }
         }
 
@@ -187,90 +265,135 @@
                 font-size: 1.75rem;
             }
 
-            .services-subtitle {
+            .services-description {
                 font-size: 0.95rem;
             }
 
             .service-card {
-                padding: 1.75rem 1.25rem;
+                padding: 2rem 1.5rem;
             }
 
             .service-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .service-card-title {
                 font-size: 1.2rem;
-                margin-bottom: 1rem;
             }
 
-            .service-description {
+            .service-card-description {
                 font-size: 0.9rem;
-                margin-bottom: 1.5rem;
             }
 
-            .service-features li {
-                font-size: 0.85rem;
-                padding: 0.6rem 0;
+            .faq-item {
+                padding: 1.25rem 0;
+            }
+
+            .view-details-btn {
+                padding: 0.9rem 2rem;
+                font-size: 0.95rem;
             }
         }
     </style>
 </head>
 <body>
     <section class="services-section">
-        <div class="services-header">
-            <h2 class="services-title">Our Services</h2>
-            <p class="services-subtitle">Comprehensive 3D visualization solutions for all your needs</p>
-        </div>
-
-        <div class="services-container">
-            <!-- Architectural Visualization Card -->
-            <div class="service-card">
-                <div class="service-icon">🏢</div>
-                <h3 class="service-card-title">Architectural Visualization</h3>
-                <p class="service-description">
-                    Stunning exterior and interior renderings that bring your architectural designs to life with photorealistic detail.
+        <div class="services-wrapper">
+            <!-- Left Column -->
+            <div class="services-left">
+                <div class="services-label">Services</div>
+                <h2 class="services-title">Interior 3D Renderings</h2>
+                <p class="services-description">
+                    Welcome to our 3D redering services, where we specialize in bringing to life your ideas.
                 </p>
-                <ul class="service-features">
-                    <li>Exterior Renderings</li>
-                    <li>Interior Design</li>
-                    <li>Landscape Visualization</li>
-                    <li>Aerial Views</li>
-                </ul>
+
+                <!-- FAQ Accordion -->
+                <div class="faq-container">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>Can you work my plan or drawing?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! Our designers are skilled at creating.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer project management services?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, we provide comprehensive project management services to ensure your project runs smoothly from start to finish.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer services for Interior renderings?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! We specialize in creating stunning interior 3D renderings for residential and commercial spaces.
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#details" class="view-details-btn">View Details</a>
             </div>
 
-            <!-- Product Visualization Card -->
-            <div class="service-card">
-                <div class="service-icon">📦</div>
-                <h3 class="service-card-title">Product Visualization</h3>
-                <p class="service-description">
-                    High-quality 3D product renders for marketing, e-commerce, and promotional materials.
-                </p>
-                <ul class="service-features">
-                    <li>Product Modeling</li>
-                    <li>Material Rendering</li>
-                    <li>360° Views</li>
-                    <li>Animation</li>
-                </ul>
-            </div>
+            <!-- Right Column - Service Cards -->
+            <div class="services-right">
+                <div class="service-card">
+                    <span class="service-icon">🏠</span>
+                    <h3 class="service-card-title">Home Staging</h3>
+                    <p class="service-card-description">
+                        Space planning is a fundamental aspect off interior design that focuses on arranging.
+                    </p>
+                    <a href="#" class="read-more-link">Read More</a>
+                </div>
 
-            <!-- 3D Animation Card -->
-            <div class="service-card">
-                <div class="service-icon">🎬</div>
-                <h3 class="service-card-title">3D Animation</h3>
-                <p class="service-description">
-                    Dynamic walkthroughs and animations that showcase your projects in motion.
-                </p>
-                <ul class="service-features">
-                    <li>Architectural Walkthroughs</li>
-                    <li>Flythrough Animations</li>
-                    <li>Product Animations</li>
-                    <li>Virtual Tours</li>
-                </ul>
+                <div class="service-card">
+                    <span class="service-icon">🏗️</span>
+                    <h3 class="service-card-title">Interior Design</h3>
+                    <p class="service-card-description">
+                        Space planning is a fundamental aspect off interior design that focuses on arranging.
+                    </p>
+                    <a href="#" class="read-more-link">Read More</a>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🚚</span>
+                    <h3 class="service-card-title">Remodeling Services</h3>
+                    <p class="service-card-description">
+                        Space planning is a fundamental aspect off interior design that focuses on arranging.
+                    </p>
+                    <a href="#" class="read-more-link">Read More</a>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
